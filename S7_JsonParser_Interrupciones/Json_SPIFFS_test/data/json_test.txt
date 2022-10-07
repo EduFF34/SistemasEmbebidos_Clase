@@ -1,1 +1,1 @@
-{"nombre_alumno":"Eduardo Fragoso de la Fuente"}
+{"nombre_alumno":"Eduardo"}
