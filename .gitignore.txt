@@ -1,0 +1,2 @@
+S8_AWS_MQTT/AWS_MQTT/data/*
+prueba_gitignore/*
