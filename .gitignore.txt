@@ -1,2 +1,3 @@
+S11_Colores_IoT/AWS_MQTT_Shadow_button/data/*
 S8_AWS_MQTT/AWS_MQTT/data/*
 prueba_gitignore/*
