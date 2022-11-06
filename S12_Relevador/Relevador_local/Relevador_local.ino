@@ -1,18 +1,17 @@
 #define PIN_Button 33
 #define PIN_Rel 15
 
-int rel_status = 0;
+bool rel_status = 0;
 
 // Debouncing
 unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = 250;
 
+// Interrupcion_boton. Al presionarlo cambia el color del led
 void IRAM_ATTR isr_button(){
 
   if ((millis() - lastDebounceTime) > debounceDelay){
-     rel_status++; 
-     if (rel_status >= 2) rel_status = 0;
-
+     rel_status = !rel_status; 
      lastDebounceTime = millis();
   }
   
@@ -35,14 +34,7 @@ void loop() {
 
   // Estado del relevador
 
-  switch(rel_status){
-    case 0: // OFF
-      digitalWrite(PIN_Rel, LOW);
-    break;
-
-    case 1: // ON
-      digitalWrite(PIN_Rel, HIGH);
-    break;
+  if(rel_status){digitalWrite(PIN_Rel, HIGH);}
+  else{digitalWrite(PIN_Rel, LOW);}
   }
   
-}
